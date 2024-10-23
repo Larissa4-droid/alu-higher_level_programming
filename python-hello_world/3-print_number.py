@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-number = 98
-print(f"{number} Battery street")
+number = "98"  # This is now a string
+print(f"{number:d} Battery street")
 
