@@ -1,2 +1,2 @@
 #!/bin/bash
-python "$PYFILE" || echo "Error: $PYFILE does not exist or cannot be executed."
+python3 "$PYFILE"
