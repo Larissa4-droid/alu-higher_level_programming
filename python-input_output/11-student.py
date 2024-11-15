@@ -1,54 +1,38 @@
 #!/usr/bin/python3
-"""
-A Student class that defines a studen (module)
-"""
+'''class that makes a student'''
 
 
-<<<<<<< HEAD
 class Student:
-    """
-    this is a student class
-    """
+    '''student class'''
+    first_name = None
+    last_name = None
+    age = None
 
-def __init__(self, first_name, last_name, age):
-    """
-    just doing init for variables
-=======
-class student():
-    """
-       A Student class that defines a student 
-    """
     def __init__(self, first_name, last_name, age):
-        """
-            INIT
->>>>>>> 6427b0b5935bbdf2227a51d2669076a7153f394f
-        """
+        '''inits the data needed'''
         self.first_name = first_name
-        self.lat_name = last_name
+        self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """
-<<<<<<< HEAD
-        method converts to json
-======= 
-            retrieves a dictionary representation
-            of a Student instance
->>>>>>> 6427b0b5935bbdf2227a51d2669076a7153f394f
-        """
-        if type(attrs) is list and all([type(x) == str for x in attrs]):
-           return {k: v for k, v in self.__dict__.items() if k in attrs}
-        return(self.__dict__)
+        '''returns a dictionary representative of the data'''
+        context = {
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'age': self.age
+        }
+        if attrs is None or type(attrs) != list:
+            return context
+        else:
+            cont = {}
+            for item in attrs:
+                if type(item) != str:
+                    return context
+                if item in context.keys():
+                    cont[item] = context[item]
+            return cont
 
     def reload_from_json(self, json):
-        """
-<<<<<<< HEAD
-        return json
-        """
-        for i,j in json.items():
-            self.__dict__(i) = j
-======= 
-        """
-        for i, j in json.items():
-            self.__dict__[i] = j
->>>>>>> 6427b0b5935bbdf2227a51d2669076a7153f394f            
+        '''reload_from_json'''
+        for item in json.keys():
+            self.__dict__[item] = json[item]
