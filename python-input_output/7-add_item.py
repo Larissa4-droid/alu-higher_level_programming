@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""adds all arguments to a Python list, and after that save them to a file:"""
+"""Are you docuemnted ?"""
 
 
 import sys
