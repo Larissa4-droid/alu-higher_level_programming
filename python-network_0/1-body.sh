@@ -1,3 +1,3 @@
-#!/bin/bash 
-# display the body of a file 
-curl -sLfG "$1"
+#!/bin/bash
+# get response but display only body
+curl -sL "$1"
