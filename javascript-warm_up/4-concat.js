@@ -2,10 +2,7 @@
 
 const { argv } = require('node:process');
 
-if (argv[2] === undefined) {
-  console.log('No argument');
-}
+const arg1 = argv[2] || 'undefined';
+const arg2 = argv[3] || 'undefined';
 
-if (argv[2]) {
-  console.log(argv[2]);
-}
+console.log(`${arg1} is ${arg2}`);
